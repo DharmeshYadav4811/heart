@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.options {
+    margin: 20px 0;
+}
+
+.options label {
+    font-size: 1.2em;
+    margin: 0 10px;
+}
+
+.heart-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.heart {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    transform: rotate(-45deg);
+    animation: beat 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: inherit;
+    border-radius: 50%;
+    top: -75px;
+    left: 0;
+}
+
+.heart::after {
+    left: 75px;
+    top: 0;
+}
+
+.name {
+    position: absolute;
+    transform: rotate(45deg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(-45deg);
+    }
+}
